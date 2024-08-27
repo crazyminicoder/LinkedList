@@ -69,6 +69,15 @@ class LinkedList:
             current = next
         self.head = prev
 
+    def insertAtBegning(self, data):
+        if self.head is None:
+            print("the list is empty")
+            return
+
+        temp = self.head
+        self.head = Node(data)
+        self.head.next = temp
+
 
 ll = LinkedList()
 ll.add(5)
@@ -86,5 +95,9 @@ ll.printLL()
 ll.search(5)
 
 ll.reverse()
+
+ll.printLL()
+
+ll.insertAtBegning(33)
 
 ll.printLL()
