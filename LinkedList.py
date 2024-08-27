@@ -30,7 +30,7 @@ class LinkedList:
             print(current.data, end='->' if current.next else '\n')
             current = current.next
 
-    def remove(self):
+    def removeLast(self):
         if self.head is None:
             print("List is empty")
             return
@@ -78,6 +78,26 @@ class LinkedList:
         self.head = Node(data)
         self.head.next = temp
 
+    def insertInBetween(self, position, data):
+        if self.head is None:
+            print("The list is empty")
+            return
+
+        if position == 1:
+            self.insertAtBegning(data)
+
+        else:
+            count = 1
+            temp = self.head
+            while count < position:
+                temp = temp.next
+                count += 1
+
+            next = temp.next
+            newNode = Node(data)
+            temp.next = newNode
+            newNode.next = next
+
 
 ll = LinkedList()
 ll.add(5)
@@ -88,7 +108,7 @@ ll.add(6)
 
 ll.printLL()
 
-ll.remove()
+ll.removeLast()
 
 ll.printLL()
 
@@ -101,3 +121,9 @@ ll.printLL()
 ll.insertAtBegning(33)
 
 ll.printLL()
+
+ll.insertInBetween(3, 7)
+
+ll.printLL()
+
+ll.removeLast()
