@@ -98,6 +98,16 @@ class LinkedList:
             temp.next = newNode
             newNode.next = next
 
+    def removeTop(self):
+        if self.head is None:
+            print('The list is empty')
+            return
+
+        temp = self.head
+        print("The removed node at top is: ", temp.data)
+        self.head = None
+        self.head = temp.next
+
 
 ll = LinkedList()
 ll.add(5)
@@ -127,3 +137,5 @@ ll.insertInBetween(3, 7)
 ll.printLL()
 
 ll.removeLast()
+
+ll.removeTop()
