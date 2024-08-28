@@ -108,6 +108,24 @@ class LinkedList:
         self.head = None
         self.head = temp.next
 
+    def removeInBetween(self, key):
+        if self.head is None:
+            print("The list is empty")
+            return
+        temp = self.head
+        prev = None
+        while temp:
+            if temp.data == key:
+                break
+            prev = temp
+            temp = temp.next
+
+        if temp.data == key:
+            next = temp.next
+            prev.next = next
+        else:
+            print("Key not found")
+
 
 ll = LinkedList()
 ll.add(5)
@@ -139,3 +157,9 @@ ll.printLL()
 ll.removeLast()
 
 ll.removeTop()
+
+ll.printLL()
+
+ll.removeInBetween(15)
+
+ll.printLL()
