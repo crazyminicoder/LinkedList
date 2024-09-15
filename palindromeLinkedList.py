@@ -1,3 +1,10 @@
+# Problem: Given the head of a singly linked list, return true if it is a palindrome, otherwise return false.
+
+# Example:
+
+# Input: head = [1, 2, 2, 1]
+# Output: true
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -31,12 +38,10 @@ class palindrome:
             stack.append(temp.data)
             temp = temp.next
 
-        print('stack: ', stack)
-
         if stack == stack[::-1]:
-            print('The list is a palindrome')
+            return True
         else:
-            print('The list is not a palindrome')
+            return False
 
 
 pal = palindrome()
@@ -46,4 +51,4 @@ pal.add(2)
 pal.add(2)
 pal.add(1)
 
-pal.reverse()
+print(pal.reverse())
