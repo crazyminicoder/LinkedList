@@ -1,3 +1,10 @@
+# Remove Duplicates from Unsorted Linked List
+# Problem: Given the head of an unsorted linked list, remove all duplicates such that each element appears only once. You may not sort the list.
+
+# Example:
+# Input: head = [4, 5, 4, 3, 2, 5, 1]
+# Output: [4, 5, 3, 2, 1]
+
 class Node:
     def __init__(self, data):
         self.data = data
